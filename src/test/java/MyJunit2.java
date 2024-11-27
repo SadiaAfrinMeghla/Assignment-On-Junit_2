@@ -1,4 +1,5 @@
 import com.sun.source.doctree.ThrowsTree;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
@@ -51,7 +52,7 @@ public class MyJunit2 {
         dropdownElen.sendKeys(Keys.ARROW_DOWN, Keys.ENTER);
 
         //Country -------------------
-        WebElement dropdown= driver.findElement(By.id("country_1665629257"));
+        WebElement dropdown = driver.findElement(By.id("country_1665629257"));
         Select option2 = new Select(dropdown);
         option2.selectByVisibleText("Bangladesh");
 
@@ -81,7 +82,7 @@ public class MyJunit2 {
 
         Util.scroll(driver, 400);
 
-        WebElement dropdown1= driver.findElement(By.id("select_1665628361"));
+        WebElement dropdown1 = driver.findElement(By.id("select_1665628361"));
         Select value3 = new Select(dropdown1);
         value3.selectByVisibleText("Town Hall");
 
@@ -112,8 +113,14 @@ public class MyJunit2 {
         }
 
     }
+        @AfterAll
+        public void FinishTest(){
+driver.quit();
+        }
 
-}
+    }
+
+
 
 
 
